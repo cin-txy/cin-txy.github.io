@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>今天吃啥</title>
+  <title>今天吃点啥</title>
   <style>
     * { /* 重置默认样式 */
       margin: 0;
@@ -11,6 +11,7 @@
       outline: none;
       user-select: none;
     }
+    /* 包裹大转盘 div */
     .wrapper {
       position: relative;
       height: 200px;
@@ -21,6 +22,7 @@
       box-shadow: #000000 0px 0px 10px;
       border-radius: 50%;
     }
+    /* 大转盘的指针 */
     .light {
       position: absolute;
       height: 10px;
@@ -66,6 +68,7 @@
     .light:nth-child(10) {
       transform: rotate(324deg);
     }
+    /* 大转盘主体部分 */
     .panel {
       position: relative;
       height: 200px;
@@ -88,31 +91,61 @@
       transform: rotate(-18deg);
     }
     .sector:nth-child(2) {
-      transform: rotate(18deg);
+      transform: rotate(36deg);
     }
     .sector:nth-child(3) {
       transform: rotate(54deg);
     }
     .sector:nth-child(4) {
-      transform: rotate(90deg);
+      transform: rotate(72deg);
     }
     .sector:nth-child(5) {
-      transform: rotate(126deg);
+      transform: rotate(90deg);
     }
     .sector:nth-child(6) {
-      transform: rotate(162deg);
+      transform: rotate(108deg);
     }
     .sector:nth-child(7) {
-      transform: rotate(198deg);
+      transform: rotate(126deg);
     }
     .sector:nth-child(8) {
-      transform: rotate(234deg);
+      transform: rotate(144deg);
     }
     .sector:nth-child(9) {
-      transform: rotate(270deg);
+      transform: rotate(162deg);
     }
     .sector:nth-child(10) {
+      transform: rotate(180deg);
+    }
+    .sector:nth-child(11) {
+      transform: rotate(198deg);
+    }
+    .sector:nth-child(12) {
+      transform: rotate(216deg);
+    }
+    .sector:nth-child(13) {
+      transform: rotate(234deg);
+    }
+    .sector:nth-child(14) {
+      transform: rotate(252deg);
+    }
+    .sector:nth-child(15) {
+      transform: rotate(270deg);
+    }
+    .sector:nth-child(16) {
+      transform: rotate(288deg);
+    }
+    .sector:nth-child(17) {
       transform: rotate(306deg);
+    }
+    .sector:nth-child(18) {
+      transform: rotate(324deg);
+    }
+    .sector:nth-child(19) {
+      transform: rotate(342deg);
+    }
+    .sector:nth-child(20) {
+      transform: rotate(360deg);
     }
     .sector:nth-child(2n+1) .sector-inner {
       background: #fef6e0;
@@ -171,85 +204,145 @@
     @keyframes twinkling {
       50% { background: transparent; }
     }
-</style>
+  </style>
 </head>
 <body>
-  <div class="wrapper">
-    <div class="light"></div>
-    <div class="light"></div>
-    <div class="light"></div>
-    <div class="light"></div>
-    <div class="light"></div>
-    <div class="light"></div>
-    <div class="light"></div>
-    <div class="light"></div>
-    <div class="light"></div>
-    <div class="light"></div>
-    <div class="panel">
-      <div class="sector">
-        <div class="sector-inner">
-          <span>花甲粉</span>
-        </div>
+<div class="wrapper">
+  <div class="light"></div>
+  <div class="light"></div>
+  <div class="light"></div>
+  <div class="light"></div>
+  <div class="light"></div>
+  <div class="light"></div>
+  <div class="light"></div>
+  <div class="light"></div>
+  <div class="light"></div>
+  <div class="light"></div>
+  <div class="light"></div>
+  <div class="light"></div>
+  <div class="light"></div>
+  <div class="light"></div>
+  <div class="light"></div>
+  <div class="light"></div>
+  <div class="light"></div>
+  <div class="light"></div>
+  <div class="light"></div>
+  <div class="light"></div>
+  <div class="panel">
+    <div class="sector">
+      <div class="sector-inner">
+        <span>花甲粉</span>
       </div>
-      <div class="sector">
-        <div class="sector-inner">
-          <span> 螺狮粉</span>
-        </div>
-      </div>
-      <div class="sector">
-        <div class="sector-inner">
-          <span>辣椒炒肉</span>
-        </div>
-      </div>
-      <div class="sector">
-        <div class="sector-inner">
-          <span>西红柿炒蛋</span>
-        </div>
-      </div>
-      <div class="sector">
-        <div class="sector-inner">
-          <span> 红烧肉</span>
-        </div>
-      </div>
-      <div class="sector">
-        <div class="sector-inner">
-          <span>食物1</span>
-        </div>
-      </div>
-      <div class="sector">
-        <div class="sector-inner">
-          <span>食物2</span>
-        </div>
-      </div>
-      <div class="sector">
-        <div class="sector-inner">
-          <span>食物3</span>
-        </div>
-      </div>
-      <div class="sector">
-        <div class="sector-inner">
-          <span> 食物4</span>
-        </div>
-      </div>
-      <div class="sector">
-        <div class="sector-inner">
-          <span>食物5</span>
-        </div>
-      </div>
-      <div class="pointer">开始选择</div>
     </div>
+    <div class="sector">
+      <div class="sector-inner">
+        <span>冒菜</span>
+      </div>
+    </div>
+    <div class="sector">
+      <div class="sector-inner">
+        <span>黄焖鸡</span>
+      </div>
+    </div>
+    <div class="sector">
+      <div class="sector-inner">
+        <span>肠粉</span>
+      </div>
+    </div>
+    <div class="sector">
+      <div class="sector-inner">
+        <span>炒粉</span>
+      </div>
+    </div>
+    <div class="sector">
+      <div class="sector-inner">
+        <span>炸串</span>
+      </div>
+    </div>
+    <div class="sector">
+      <div class="sector-inner">
+        <span>烧烤</span>
+      </div>
+    </div>
+    <div class="sector">
+      <div class="sector-inner">
+        <span>粥</span>
+      </div>
+    </div>
+    <div class="sector">
+      <div class="sector-inner">
+        <span>牛肉粉</span>
+      </div>
+    </div>
+    <div class="sector">
+      <div class="sector-inner">
+        <span>麻辣香锅</span>
+      </div>
+    </div>
+    <div class="sector">
+      <div class="sector-inner">
+        <span>奶茶</span>
+      </div>
+    </div>
+    <div class="sector">
+      <div class="sector-inner">
+        <span>擂椒饭</span>
+      </div>
+    </div>
+    <div class="sector">
+      <div class="sector-inner">
+        <span>湘菜</span>
+      </div>
+    </div>
+    <div class="sector">
+      <div class="sector-inner">
+        <span>木桶饭</span>
+      </div>
+    </div>
+    <div class="sector">
+      <div class="sector-inner">
+        <span>盖码饭</span>
+      </div>
+    </div>
+    <div class="sector">
+      <div class="sector-inner">
+        <span>酸菜鱼</span>
+      </div>
+    </div>
+    <div class="sector">
+      <div class="sector-inner">
+        <span>鱼粉</span>
+      </div>
+    </div>
+    <div class="sector">
+      <div class="sector-inner">
+        <span>鱼粉</span>
+      </div>
+    </div>
+    <div class="sector">
+      <div class="sector-inner">
+        <span>咖啡</span>
+      </div>
+    </div>
+    <div class="sector">
+      <div class="sector-inner">
+        <span>麻辣烫</span>
+      </div>
+    </div>
+    <div class="pointer">开始选择</div>
   </div>
-  <div class="result"></div>
+</div>
+<div class="result"></div>
 
-  <script>
+<script>
     let getEle = document.getElementsByClassName.bind(document);
     let pointer = getEle('pointer')[0];
     let result = getEle('result')[0];
     let lights = Array.prototype.slice.call(getEle('light'));
 
     let onRotation = false; // 记录当前是否正在旋转，如果正在旋转，就不能继续点击了
-    let reward = ['花甲粉', '螺狮粉', '辣椒炒肉', '西红柿炒蛋', '红烧肉', 
-    '食物1', '食物2', '食物3', '食物4', '食物5'];
+    let reward = ['花甲粉', '冒菜', '黄焖鸡', '肠粉', '炒粉',
+    '炸串', '烧烤', '粥', '牛肉粉', '麻辣香锅', '奶茶', '擂椒饭', '湘菜', '木桶饭', '盖码饭', '酸菜鱼', '鱼粉', '咖啡', '麻辣烫'];
 
     // 根据随机角度获取奖励
     let getReward = (function() {
@@ -260,8 +353,8 @@
         currentDeg += rotateDeg;
         let rewardText = reward[Math.floor((currentDeg + 18) % 360 / 36)]
         return {
-        deg: currentDeg,
-         text: rewardText === '谢谢参与' ? '很遗憾，您没有获得奖品。' : '恭喜获得: ' + rewardText
+          deg: currentDeg,
+          text: rewardText === '谢谢参与' ? '很遗憾，您没有获得奖品。' : '恭喜获得: ' + rewardText
         }
       }
     })();
@@ -285,6 +378,6 @@
         result.style.display = 'block';
       }, 300);
     })
-</script>
+  </script>
 </body>
 </html>
