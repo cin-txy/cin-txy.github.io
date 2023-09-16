@@ -79,107 +79,107 @@
 </head>
 
 <body>
-    <div class="wrap">
-        <div class="wrap-son">
-            <div class="container-fluid">
-                <div class="box">
-                    <div class="jumbotron text-center">
-                        <h1>相恋了</h1>
-                        <h3 class="timer">
-                            <div class="row">
-                                <b id="d"></b> 天 <b id="h"></b> 时 <b id="m"></b> 分
-                            </div>
-                            <div class="row">
-                                <b id="s"></b> 秒
-                            </div>
-                        </h3>
-                        <p>
-<!--                            <a id="to_comments" class="btn btn-primary btn-lg" role="button">留个言吧</a>-->
-                        </p>
-                    </div>
+<div class="wrap">
+    <div class="wrap-son">
+        <div class="container-fluid">
+            <div class="box">
+                <div class="jumbotron text-center">
+                    <h1>...</h1>
+                    <h3 class="timer">
+                        <div class="row">
+                            <b id="d"></b> 94天 <b id="h"></b> 02时 <b id="m"></b> 01分
+                        </div>
+                        <div class="row">
+                            <b id="s"></b> 36秒
+                        </div>
+                    </h3>
+                    <p>
+                        <!--                            <a id="to_comments" class="btn btn-primary btn-lg" role="button">留个言吧</a>-->
+                    </p>
                 </div>
-
-                <div class="row">
-                    <h4 class="love text-center"><span class="love-son"></span></h4>
-                </div>
-
-                <div class="row">
-<!--                    <p class="copy text-center col-xs-12 col-sm-12">京ICP备xxxxxxxx号 京公网安备xxxxxxxxxxxxxx号</p>-->
-                </div>
-
-                <div id="hans-bolang"></div>
             </div>
+
+            <div class="row">
+                <h4 class="love text-center"><span class="love-son"></span></h4>
+            </div>
+
+            <div class="row">
+                <!--                    <p class="copy text-center col-xs-12 col-sm-12">京ICP备xxxxxxxx号 京公网安备xxxxxxxxxxxxxx号</p>-->
+            </div>
+
+            <div id="hans-bolang"></div>
         </div>
     </div>
+</div>
 
-    <div class="container-fluid" id="comments">
-        <div class="row comment">
-            <div class="col-xs-10 col-sm-10 col-md-6 col-xs-push-1 col-sm-push-1 col-md-push-3">
-<!--                <h2>留言：</h2>-->
-                <div id="vcomments"></div>
-            </div>
+<div class="container-fluid" id="comments">
+    <div class="row comment">
+        <div class="col-xs-10 col-sm-10 col-md-6 col-xs-push-1 col-sm-push-1 col-md-push-3">
+            <!--                <h2>留言：</h2>-->
+            <div id="vcomments"></div>
         </div>
     </div>
+</div>
 
-    <script src="js/jquery-1.11.0.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src='js/Valine.min.js'></script><!-- Valine 评论系统 -->
+<script src="js/jquery-1.11.0.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src='js/Valine.min.js'></script><!-- Valine 评论系统 -->
 
-    <!-- 计时器 -->
-    <script>
-        function timer() {
-            var start = new Date(2023, 4, 2, 0, 55, 19); // 2020.07.31 13:14:00
-            var t = new Date() - start;
-            var h = ~~(t / 1000 / 60 / 60 % 24);
-            if (h < 10) {
-                h = "0" + h;
+<!-- 计时器 -->
+<script>
+    // function timer() {
+    //     var start = new Date(2023, 4, 2, 0, 55, 19); // 2020.07.31 13:14:00
+    //     var t = new Date() - start;
+    //     var h = ~~(t / 1000 / 60 / 60 % 24);
+    //     if (h < 10) {
+    //         h = "0" + h;
+    //     }
+    //     var m = ~~(t / 1000 / 60 % 60);
+    //     if (m < 10) {
+    //         m = "0" + m;
+    //     }
+    //
+    //     var s = ~~(t / 1000 % 60);
+    //     if (s < 10) {
+    //         s = "0" + s;
+    //     }
+    //     document.getElementById('d').innerHTML = ~~(t / 1000 / 60 / 60 / 24);
+    //     document.getElementById('h').innerHTML = h;
+    //     document.getElementById('m').innerHTML = m;
+    //     document.getElementById('s').innerHTML = s;
+    // }
+    //timer();
+    setInterval(timer, 1000);
+</script>
+
+<script>
+    var oComments = document.querySelector("#comments");
+    var oCommentsTop = Math.round(oComments.offsetTop);
+    //运动框架
+    function move() {
+        // 1. 关闭开启定时器;
+        //clearInterval(timer);
+        var timer = setInterval(function () {
+            // 2. 计算速度;
+            var iNow = document.documentElement.scrollTop || document.body.scrollTop; //100
+            iNow = Math.round(iNow);
+            var speed = (oCommentsTop - iNow) / 10;
+            // 3. 速度取整;
+            if (speed > 0) {
+                speed = Math.ceil(speed);
+            } else {
+                speed = Math.floor(speed);
             }
-            var m = ~~(t / 1000 / 60 % 60);
-            if (m < 10) {
-                m = "0" + m;
+            document.documentElement.scrollTop = document.body.scrollTop = iNow + speed + 1;
+            // 4. 终止条件;
+            if (iNow >= oCommentsTop) {
+                clearInterval(timer);
             }
+        }, 20)
+    }
 
-            var s = ~~(t / 1000 % 60);
-            if (s < 10) {
-                s = "0" + s;
-            }
-            document.getElementById('d').innerHTML = ~~(t / 1000 / 60 / 60 / 24);
-            document.getElementById('h').innerHTML = h;
-            document.getElementById('m').innerHTML = m;
-            document.getElementById('s').innerHTML = s;
-        }
-        timer();
-        setInterval(timer, 1000);
-    </script>
-
-    <script>
-        var oComments = document.querySelector("#comments");
-        var oCommentsTop = Math.round(oComments.offsetTop);
-        //运动框架
-        function move() {
-            // 1. 关闭开启定时器;
-            clearInterval(timer);
-            var timer = setInterval(function () {
-                // 2. 计算速度;
-                var iNow = document.documentElement.scrollTop || document.body.scrollTop; //100
-                iNow = Math.round(iNow);
-                var speed = (oCommentsTop - iNow) / 10;
-                // 3. 速度取整;
-                if (speed > 0) {
-                    speed = Math.ceil(speed);
-                } else {
-                    speed = Math.floor(speed);
-                }
-                document.documentElement.scrollTop = document.body.scrollTop = iNow + speed + 1;
-                // 4. 终止条件;
-                if (iNow >= oCommentsTop) {
-                    clearInterval(timer);
-                }
-            }, 20)
-        }
-
-        to_comments.onclick = move;
-    </script>
+    to_comments.onclick = move;
+</script>
 
 <!--    &lt;!&ndash; 情话接口 &ndash;&gt;-->
 <!--    <script>-->
